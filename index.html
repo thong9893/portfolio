@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Giới Thiệu Bản Thân</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        header p { font-weight: 300; opacity: 0.9; }
+
+        /* Section Styling */
+        section {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #eff6ff;
+            color: var(--primary-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Experience & Education */
+        .item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid #e2e8f0;
+        }
+
+        .item:last-child { margin-bottom: 0; }
+        .item-title { font-weight: 600; font-size: 1.1rem; }
+        .item-meta { color: #64748b; font-size: 0.9rem; margin-bottom: 5px; }
+
+        /* Contact */
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-links a:hover { color: var(--primary-color); }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>NGUYỄN VĂN A</h1>
+            <p>Web Developer | UI/UX Enthusiast</p>
+        </header>
+
+        <section id="about">
+            <h2>Giới thiệu</h2>
+            <p>Tôi là một lập trình viên đam mê tạo ra các ứng dụng web tối ưu và thân thiện với người dùng. Với tư duy logic tốt và khả năng học hỏi nhanh, tôi luôn mong muốn mang lại giá trị thực thông qua code.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Kỹ năng</h2>
+            <div class="skills-container">
+                <span class="skill-tag">HTML5 & CSS3</span>
+                <span class="skill-tag">JavaScript (React)</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Git/GitHub</span>
+                <span class="skill-tag">Figma</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Kinh nghiệm</h2>
+            <div class="item">
+                <div class="item-title">Frontend Developer - Công ty ABC</div>
+                <div class="item-meta">Tháng 01/2023 - Hiện tại</div>
+                <p>Phát triển giao diện cho hệ thống quản lý kho, tối ưu hóa tốc độ tải trang lên 40%.</p>
+            </div>
+            <div class="item">
+                <div class="item-title">Thực tập sinh Web - Công ty XYZ</div>
+                <div class="item-meta">Tháng 06/2022 - Tháng 12/2022</div>
+                <p>Hỗ trợ bảo trì các landing page và viết unit test cho các module cơ bản.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Học vấn</h2>
+            <div class="item">
+                <div class="item-title">Đại học Công nghệ Thông tin</div>
+                <div class="item-meta">Cử nhân Kỹ thuật Phần mềm | 2019 - 2023</div>
+                <p>GPA: 3.6/4.0</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Liên hệ</h2>
+            <div class="contact-links">
+                <a href="mailto:email@example.com">📧 email@example.com</a>
+                <a href="tel:0123456789">📞 0123 456 789</a>
+                <a href="#">🌐 linkedin.com/in/username</a>
+                <a href="#">💻 github.com/username</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
