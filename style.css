@@ -6,9 +6,9 @@
 }
 
 :root {
-    --primary-color: #00ADB5; /* Teal/Cyan for impact */
-    --secondary-color: #393E46; /* Dark slate for background contrast */
-    --text-color: #EEEEEE; /* Light text for dark backgrounds */
+    --primary-color: #00ADB5; /* Teal/Cyan */
+    --secondary-color: #393E46; /* Dark slate */
+    --text-color: #EEEEEE; /* Light text */
     --body-bg: #222831; /* Deep dark background */
     --card-bg: #393E46;
     --font-stack: 'Poppins', sans-serif;
@@ -28,20 +28,19 @@ a {
 }
 
 a:hover {
-    color: #4EE4E9; /* Lighter shade on hover */
+    color: #4EE4E9;
 }
 
 ul {
     list-style: none;
 }
 
-/* Base Section Styling */
+/* --- BASE SECTION STYLING --- */
 .section {
     padding: 80px 20px;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
-    /* Initial state for JavaScript 'reveal' effect */
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -57,7 +56,7 @@ ul {
 }
 
 h2 {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
     color: var(--primary-color);
     position: relative;
@@ -77,7 +76,7 @@ h2::after {
     border-radius: 2px;
 }
 
-/* --- HEADER & NAVIGATION (Sticky) --- */
+/* --- HEADER & NAVIGATION --- */
 header {
     background: var(--body-bg);
     padding: 1rem 0;
@@ -119,46 +118,167 @@ nav ul li a:hover::after {
 /* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(135deg, var(--body-bg) 0%, var(--secondary-color) 100%);
-    min-height: 90vh;
+    min-height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden; /* Needed for slide animations */
+    padding: 60px 20px;
 }
 
-.hero h1 {
+.hero-content {
+    width: 100%;
+    max-width: 1000px; /* Khung chứa lớn hơn */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Avatar styling */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin-bottom: 25px;
+    box-shadow: 0 0 25px rgba(0, 173, 181, 0.3);
+}
+
+.hero h1.bebas-neue-regular {
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 4rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-.hero p {
-    font-size: 1.8rem;
+.dev-name {
+    color: var(--primary-color);
+}
+
+.role-container {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Description styling - ĐÃ MỞ RỘNG RA 2 BÊN */
+.description {
+    font-size: 0.95rem; 
     font-weight: 300;
-    margin-bottom: 3rem;
-    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.9; /* Tăng nhẹ độ giãn dòng cho dễ đọc */
+    max-width: 800px;  /* Đã tăng lên 800px theo yêu cầu của bạn */
+    text-align: justify; /* Canh đều 2 bên */
+    margin: 0 auto 40px auto;
+    color: rgba(238, 238, 238, 0.85);
+    word-spacing: -0.5px; /* Giảm khoảng cách giữa các từ để justify mượt hơn */
 }
 
-.cta-button {
+.btn-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
     background-color: var(--primary-color);
     color: var(--body-bg);
     padding: 12px 35px;
     border-radius: 50px;
-    font-size: 1.1rem;
     font-weight: 600;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.cta-button:hover {
-    background-color: #4EE4E9;
-    box-shadow: 0 8px 20px rgba(0, 173, 181, 0.6);
+.download-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
 }
 
-/* --- ANIMATIONS (Keyframes) --- */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4);
+}
 
-/* 1. Hero Text Entrance */
+.download-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--body-bg);
+}
+
+/* --- SKILLS SECTION --- */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 280px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.4s ease;
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 173, 181, 0.2);
+    padding-bottom: 10px;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+}
+
+/* --- EDUCATION & TIMELINE --- */
+.timeline {
+    text-align: left;
+    max-width: 800px;
+    margin: auto;
+    border-left: 2px solid var(--primary-color);
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -39px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* --- PROJECTS --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    border-top: 4px solid var(--primary-color);
+}
+
+/* --- ANIMATIONS --- */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -171,251 +291,24 @@ nav ul li a:hover::after {
 }
 .slide-up { animation: slideUp 1s ease-out 0.3s forwards; opacity: 0; }
 
-/* 2. CTA Button Pulse */
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-.pulse { animation: pulse 1.5s infinite ease-in-out 0.8s; }
-
-/* 3. Section Heading Entrance */
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-.slide-in-left.is-visible { animation: slideInLeft 0.7s ease-out forwards; }
-
-@keyframes slideInRight {
-    from { opacity: 0; transform: translateX(50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-.slide-in-right.is-visible { animation: slideInRight 0.7s ease-out forwards; }
-
-
-/* --- SKILLS SECTION --- */
-.skills-container {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.skill-category {
-    flex: 1;
-    min-width: 280px;
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    text-align: left;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.skill-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    border-bottom: 2px solid rgba(0, 173, 181, 0.3);
-    padding-bottom: 10px;
-}
-
-.skill-category li {
-    padding: 8px 0;
-    opacity: 0.9;
-}
-
-/* Hover Animation: Lift effect */
-.hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-}
-
-
-/* --- EXPERIENCE SECTION (Timeline) --- */
-.timeline {
-    text-align: left;
-    position: relative;
-    padding: 40px 0;
-    max-width: 900px;
-    margin: auto;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%; /* Center the line */
-    width: 3px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    margin-bottom: 50px;
-    padding: 20px;
-    background: var(--body-bg);
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    /* Initial state for reveal-item */
-    opacity: 0;
-    transform: translateX(100px);
-}
-
-.timeline-item:nth-child(odd) {
-    transform: translateX(-100px);
-    margin-right: 50%;
-}
-
-.timeline-item:nth-child(even) {
-    margin-left: 50%;
-}
-
-/* Circle marker on the line */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 30px;
-    width: 15px;
-    height: 15px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    border: 3px solid var(--secondary-color);
-    z-index: 10;
-}
-
-.timeline-item:nth-child(odd)::before {
-    right: -40px;
-}
-
-.timeline-item:nth-child(even)::before {
-    left: -40px;
-}
-
-.timeline-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-/* Animation for timeline items (JS handles adding the 'is-visible' class) */
-.timeline-item.is-visible {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* --- PROJECTS SECTION --- */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.project-card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    text-align: left;
-    transition: transform 0.4s, box-shadow 0.4s;
-    border-top: 5px solid var(--primary-color);
-}
-
-/* Hover Animation: Grow and Shadow */
-.hover-grow:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.project-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-.project-links {
-    margin-top: 20px;
-}
-
-.project-links a {
-    margin-right: 20px;
-    font-size: 1.1rem;
-    display: inline-block;
-    color: var(--text-color);
-    opacity: 0.8;
-}
-
-.project-links a:hover {
-    color: var(--primary-color);
-    opacity: 1;
-}
-
-/* --- CONTACT SECTION --- */
-.social-links {
-    margin-top: 20px;
-}
-.social-links a {
-    color: var(--text-color);
-    margin: 0 20px;
-    transition: transform 0.4s, color 0.4s;
-}
-
-/* Hover Animation: Icon Rotation */
-.icon-rotate:hover {
-    color: var(--primary-color);
-    transform: rotate(5deg) scale(1.1);
-}
-
-/* --- FOOTER --- */
-footer {
-    background: var(--body-bg);
-    color: var(--text-color);
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Media Queries for Responsiveness */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
+    .hero h1.bebas-neue-regular { font-size: 2.8rem; }
+    
+    .description { 
+        max-width: 100%;
+        text-align: center; /* Mobile luôn nên để center */
+        font-size: 0.9rem;
+        padding: 0 10px;
     }
-
-    .hero p {
-        font-size: 1.5rem;
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
     }
-
-    /* Timeline becomes single-column centered */
-    .timeline::before {
-        left: 20px;
-        transform: translateX(0);
-    }
-
-    .timeline-item {
-        margin: 0 0 30px 40px;
-        width: auto;
-        padding-right: 0;
-    }
-
-    .timeline-item:nth-child(odd),
-    .timeline-item:nth-child(even) {
-        margin-left: 40px;
-        margin-right: 0;
-        transform: translateX(0);
-    }
-
-    .timeline-item::before {
-        left: -20px;
-        right: auto;
-        top: 25px;
-    }
-
-    .timeline-item:nth-child(odd)::before,
-    .timeline-item:nth-child(even)::before {
-        left: -20px;
-        right: auto;
+    
+    .btn-row {
+        flex-direction: column;
+        gap: 15px;
     }
 }
