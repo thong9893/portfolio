@@ -6,6 +6,6 @@ Welcome to my profile. I am a Software Tester focused on delivering high-quality
 
 </br>
 
-* **LinkedIn:** : [LinkedIn](https://www.linkedin.com/in/th%C3%B4ng-l%E1%BB%AF-minh-36870725b/)
+* **LinkedIn :**  [LinkedIn](https://www.linkedin.com/in/th%C3%B4ng-l%E1%BB%AF-minh-36870725b/)
 
-* **Portfolio:** : [Thong-Lu](https://thong9893.github.io/portfolio/)
+* **Portfolio :**  [Thong-Lu](https://thong9893.github.io/portfolio/)
